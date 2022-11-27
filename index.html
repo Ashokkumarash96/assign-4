@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Color Conversion</title>
+    <!-- Favicon Link -->
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.png" />
+    <!-- FontAwesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="./styles/normalize.css" />
+    <!-- custom css -->
+    <style>
+      body {
+        font-size: 2rem;
+        font-weight: 600;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: linear-gradient(#4c4c6f, #3b7171, #813f60);
+      }
+      input {
+        border-color: rgb(35, 35, 96);
+        font-size: 2rem;
+        border-radius: 10px;
+        padding-left: 20px;
+      }
+      button {
+        text-transform: uppercase;
+        border-color: rgb(61, 61, 123);
+        border-radius: 10px;
+        margin-left: 20px;
+      }
+      div {
+        margin-top: 30px;
+      }
+      #blue {
+        background-color: blue;
+      }
+      #green {
+        background-color: green;
+      }
+      #red {
+        background-color: red;
+      }
+      #output-text {
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input type="text" id="input-text" />
+      <button id="button-show">Submit</button>
+      <button id="red">red</button>
+      <button id="green">green</button>
+      <button id="blue">blue</button>
+      <div id="output-text"></div>
+    </div>
+    <!-- custom script -->
+    <script>
+      //Variable
+      const input = document.querySelector("#input-text");
+      const output = document.querySelector("#output-text");
+      const redButton = document.querySelector("#red");
+      const greenButton = document.querySelector("#green");
+      const blueButton = document.querySelector("#blue");
+      const showButton = document.querySelector("#button-show");
+
+      color = {
+        red: "red",
+        green: "green",
+        blue: "blue",
+      };
+
+      //Function
+      function showOutput() {
+        console.log("clicked");
+        output.innerText = input.value;
+      }
+
+      function redHandler() {
+        output.style.color = `${color.red} `;
+      }
+
+      function greenHandler() {
+        output.style.color = `${color.green}`;
+      }
+
+      function blueHandler() {
+        output.style.color = `${color.blue}`;
+      }
+
+      //Event Listener
+      showButton.addEventListener("click", showOutput);
+      redButton.addEventListener("click", redHandler);
+      greenButton.addEventListener("click", greenHandler);
+      blueButton.addEventListener("click", blueHandler);
+    </script>
+  </body>
+</html>
